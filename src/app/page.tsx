@@ -8,9 +8,18 @@ import BentoGridContent from "@/components/BentoGrid/BentoGridContent";
 // Main component
 const BentoGrid = () => {
   return (
-    <DndProvider backend={HTML5Backend}>
-      <BentoGridContent />
-    </DndProvider>
+    <>
+      <head>
+        <meta
+          name="description"
+          content="Easily create and customize your grid layout with our drag-and-drop interface. Perfect for projects, portfolios, and more."
+        />
+      </head>
+      <DndProvider backend={HTML5Backend}>
+        <h1>Drag and Drop Grid - Customize Your Layout</h1>
+        <BentoGridContent />
+      </DndProvider>
+    </>
   );
 };
 

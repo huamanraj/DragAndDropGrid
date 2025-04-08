@@ -173,6 +173,7 @@ const BentoGridContent: React.FC = () => {
           <button
             onClick={addNewItem}
             className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            aria-label="Add a new item to the grid"
           >
             Add New Item
           </button>
@@ -186,12 +187,13 @@ const BentoGridContent: React.FC = () => {
             height: `${gridHeight}px`,
             background: "white",
           }}
+          aria-label="Grid layout container"
         >
           {/* Grid background */}
           <GridBackground />
 
           {/* Drop zones */}
-          <div className="absolute inset-0" ref={dropRef}>
+          <div className="absolute inset-0" ref={dropRef} aria-label="Drop zones">
             {dropCells}
 
             {/* Items */}
@@ -206,6 +208,7 @@ const BentoGridContent: React.FC = () => {
                 onDelete={deleteItem}
                 onMove={moveItem}
                 items={items}
+                aria-label={`Grid item: ${item.content}`}
               />
             ))}
           </div>
